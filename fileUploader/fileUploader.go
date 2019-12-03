@@ -1,12 +1,12 @@
 package fileUploader
 
 import (
+	"buzzriKamiAPI/noticeRelayer"
 	"github.com/labstack/echo"
 	"io"
 	"net/http"
 	"os"
 	"strconv"
-	"subServer/noticeController"
 )
 
 // 取得したファイルを保存する関数
@@ -21,7 +21,7 @@ func FileSave(c echo.Context) error {
 	}
 
 	// 完了通知を送る先のIDを取得
-	noticeController.ClientId = reqId
+	noticeRelayer.ClientId = reqId
 
 	// フォームから送られてきたファイルを取得
 	file, err := c.FormFile("file")

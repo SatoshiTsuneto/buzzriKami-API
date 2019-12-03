@@ -55,6 +55,7 @@ func SendBullet(c echo.Context) error {
 	// IDが一致すれば、送信する値の代入
 	if reqId == clientId {
 		bullet.Num = bulletNum
+		bulletNum = 0
 		clientId = 0
 	} else {
 		bullet.Num = 0

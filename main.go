@@ -3,9 +3,9 @@ package main
 import (
 	"buzzriKamiAPI/bulletRelayer"
 	"buzzriKamiAPI/buzzRelayer"
+	"buzzriKamiAPI/fileUploader"
 	"buzzriKamiAPI/noticeRelayer"
 	"github.com/labstack/echo"
-	"subServer/fileUploader"
 )
 
 func main() {

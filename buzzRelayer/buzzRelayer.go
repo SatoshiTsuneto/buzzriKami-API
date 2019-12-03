@@ -55,9 +55,10 @@ func SendBuzz(c echo.Context) error {
 	// IDが一致すれば、送信する値の代入
 	if reqId == clientId {
 		buzz.Num = buzzNum
+		buzzNum = 0
 		clientId = 0
 	} else {
-		buzzNum = 0
+		buzz.Num = 0
 	}
 
 	// クライアントにバズり度を送信
