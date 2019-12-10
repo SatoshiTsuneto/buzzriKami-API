@@ -17,8 +17,8 @@ func main() {
 	e.GET("/recvBullet", bulletRelayer.SendBullet)
 	e.GET("/sendBullet", bulletRelayer.RecvBullet)
 
-	e.GET("/recvHit", hitRelayer.RecvHit)
-	e.GET("sendHit", hitRelayer.SendHit)
+	e.GET("/recvHit", hitRelayer.SendHit)
+	e.GET("/sendHit", hitRelayer.RecvHit)
 
 	e.GET("/recvNotice", noticeRelayer.SendNotice)
 	e.GET("/sendNotice", noticeRelayer.RecvNotice)
