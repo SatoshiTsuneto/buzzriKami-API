@@ -1,6 +1,7 @@
 package bulletRelayer
 
 import (
+	"buzzriKamiAPI/noticeRelayer"
 	"github.com/labstack/echo"
 	"net/http"
 	"strconv"
@@ -38,7 +39,7 @@ func RecvBullet(c echo.Context) error {
 	bulletNum = reqBulletNum
 
 	// 完了をクライアントに送信
-	return c.JSON(http.StatusOK, "OK")
+	return c.JSON(http.StatusOK, noticeRelayer.Result{Status: true})
 }
 
 // クライアントに銃弾の数を返す関数

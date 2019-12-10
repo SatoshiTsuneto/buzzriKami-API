@@ -11,6 +11,10 @@ type Notice struct {
 	Flg bool `json:"Flg"`
 }
 
+type Result struct {
+	Status bool `json:"Status"`
+}
+
 // データを一時保管する変数
 var (
 	notice   Notice
@@ -32,7 +36,7 @@ func RecvNotice(c echo.Context) error {
 	ClientId = reqId
 
 	// 完了をクライアントに送信
-	return c.JSON(http.StatusOK, "OK")
+	return c.JSON(http.StatusOK, Result{Status: true})
 }
 
 // クライアントに通知を送る関数

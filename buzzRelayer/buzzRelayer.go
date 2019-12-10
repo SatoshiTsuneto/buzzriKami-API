@@ -1,6 +1,7 @@
 package buzzRelayer
 
 import (
+	"buzzriKamiAPI/noticeRelayer"
 	"github.com/labstack/echo"
 	"net/http"
 	"strconv"
@@ -38,7 +39,7 @@ func RecvBuzz(c echo.Context) error {
 	buzzNum = reqBuzzNum
 
 	// 完了をクライアントに送信
-	return c.JSON(http.StatusOK, "OK")
+	return c.JSON(http.StatusOK, noticeRelayer.Result{Status: true})
 }
 
 // クライアントにバズり値を送る関数
