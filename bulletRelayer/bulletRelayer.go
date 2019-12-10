@@ -26,11 +26,11 @@ func RecvBullet(c echo.Context) error {
 	// クエリーの取得および、数値への変換
 	reqClientId, err := strconv.Atoi(c.QueryParam("id"))
 	if err != nil {
-		return c.JSON(http.StatusBadRequest, "Missing Query Param From ID.")
+		return c.JSON(http.StatusBadRequest, "Missing Query Param for ID.")
 	}
 	reqBulletNum, err := strconv.Atoi(c.QueryParam("bullet"))
 	if err != nil {
-		return c.JSON(http.StatusBadRequest, "Missing Query Param From Bullet.")
+		return c.JSON(http.StatusBadRequest, "Missing Query Param for Bullet.")
 	}
 
 	// クライアントから取得した値の代入
@@ -49,7 +49,7 @@ func SendBullet(c echo.Context) error {
 	// クエリーの取得および、数値への変換
 	reqId, err := strconv.Atoi(c.QueryParam("id"))
 	if err != nil {
-		return c.JSON(http.StatusBadRequest, "Missing Query Param.")
+		return c.JSON(http.StatusBadRequest, "Missing Query Param for ID.")
 	}
 
 	// IDが一致すれば、送信する値の代入

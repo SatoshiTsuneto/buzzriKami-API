@@ -25,7 +25,7 @@ func RecvNotice(c echo.Context) error {
 	// クエリーの取得および、数値への変換
 	reqId, err := strconv.Atoi(c.QueryParam("id"))
 	if err != nil {
-		return c.JSON(http.StatusBadRequest, "Missing Query Param.")
+		return c.JSON(http.StatusBadRequest, "Missing Query Param for ID.")
 	}
 
 	// クライアントから取得した値の代入
@@ -43,7 +43,7 @@ func SendNotice(c echo.Context) error {
 	// クエリーの取得および、数値への変換
 	reqId, err := strconv.Atoi(c.QueryParam("id"))
 	if err != nil {
-		return c.JSON(http.StatusBadRequest, "Missing Query Param.")
+		return c.JSON(http.StatusBadRequest, "Missing Query Param for ID.")
 	}
 
 	// 送信する値の代入

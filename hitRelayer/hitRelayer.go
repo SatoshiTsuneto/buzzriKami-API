@@ -26,16 +26,16 @@ func RecvHit(c echo.Context) error {
 	// クエリーの取得および、数値への変換
 	reqId, err := strconv.Atoi(c.QueryParam("id"))
 	if err != nil {
-		return c.JSON(http.StatusBadRequest, "Missing Query Param.")
+		return c.JSON(http.StatusBadRequest, "Missing Query Param for ID.")
 	}
-	reqHtNum, err := strconv.Atoi(c.QueryParam("hit"))
+	reqHitNum, err := strconv.Atoi(c.QueryParam("hit"))
 	if err != nil {
-		return c.JSON(http.StatusBadRequest, "Missing Query Param From Buzz.")
+		return c.JSON(http.StatusBadRequest, "Missing Query Param for Hit.")
 	}
 
 	// クライアントから取得した値の代入
 	clientId = reqId
-	hitNum = reqHtNum
+	hitNum = reqHitNum
 
 	// 完了をクライアントに送信
 	return c.JSON(http.StatusOK, "OK")
@@ -49,7 +49,7 @@ func SendHit(c echo.Context) error {
 	// クエリーの取得および、数値への変換
 	reqId, err := strconv.Atoi(c.QueryParam("id"))
 	if err != nil {
-		return c.JSON(http.StatusBadRequest, "Missing Query Param.")
+		return c.JSON(http.StatusBadRequest, "Missing Query Param for ID.")
 	}
 
 	// 送信する値の代入
