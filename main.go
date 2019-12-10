@@ -4,6 +4,7 @@ import (
 	"buzzriKamiAPI/bulletRelayer"
 	"buzzriKamiAPI/buzzRelayer"
 	"buzzriKamiAPI/fileUploader"
+	"buzzriKamiAPI/hitRelayer"
 	"buzzriKamiAPI/noticeRelayer"
 	"github.com/labstack/echo"
 )
@@ -15,6 +16,9 @@ func main() {
 
 	e.GET("/recvBullet", bulletRelayer.SendBullet)
 	e.GET("/sendBullet", bulletRelayer.RecvBullet)
+
+	e.GET("/recvHit", hitRelayer.RecvHit)
+	e.GET("sendHit", hitRelayer.SendHit)
 
 	e.GET("/recvNotice", noticeRelayer.SendNotice)
 	e.GET("/sendNotice", noticeRelayer.RecvNotice)

@@ -50,5 +50,5 @@ func FileSave(c echo.Context) error {
 	}
 
 	// 完了をクライアントに送信
-	return c.JSON(http.StatusOK, "OK.")
+	return c.JSON(http.StatusOK, "OK")
 }
