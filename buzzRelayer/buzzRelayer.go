@@ -21,9 +21,6 @@ var (
 
 // クライアントからシューティングのヒット数を受け取る関数
 func RecvBuzz(c echo.Context) error {
-	// JSのためのヘッダー設定
-	c.Response().Header().Set(echo.HeaderAccessControlAllowOrigin, "*")
-
 	// クエリーの取得および、数値への変換
 	reqClientId, err := strconv.Atoi(c.QueryParam("id"))
 	if err != nil {

@@ -21,9 +21,6 @@ var (
 
 // クライアントから通知を受け取る関数
 func RecvHit(c echo.Context) error {
-	// JSのためのヘッダー設定
-	c.Response().Header().Set(echo.HeaderAccessControlAllowOrigin, "*")
-
 	// クエリーの取得および、数値への変換
 	reqId, err := strconv.Atoi(c.QueryParam("id"))
 	if err != nil {
@@ -44,9 +41,6 @@ func RecvHit(c echo.Context) error {
 
 // クライアントに通知を送る関数
 func SendHit(c echo.Context) error {
-	// JSのためのヘッダー設定
-	c.Response().Header().Set(echo.HeaderAccessControlAllowOrigin, "*")
-
 	// クエリーの取得および、数値への変換
 	reqId, err := strconv.Atoi(c.QueryParam("id"))
 	if err != nil {

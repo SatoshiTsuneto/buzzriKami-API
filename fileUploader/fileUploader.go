@@ -6,22 +6,12 @@ import (
 	"io"
 	"net/http"
 	"os"
-	"strconv"
 )
 
 // 取得したファイルを保存する関数
 func FileSave(c echo.Context) error {
 	// JSのためのヘッダー設定
 	c.Response().Header().Set(echo.HeaderAccessControlAllowOrigin, "*")
-
-	// クエリーの取得および、数値への変換
-	reqId, err := strconv.Atoi(c.QueryParam("id"))
-	if err != nil {
-		return c.JSON(http.StatusBadRequest, "Missing Query Param for ID.")
-	}
-
-	// 完了通知を送る先のIDを取得
-	noticeRelayer.ClientId = reqId
 
 	// フォームから送られてきたファイルを取得
 	file, err := c.FormFile("file")

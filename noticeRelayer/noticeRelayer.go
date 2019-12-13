@@ -18,7 +18,7 @@ type Result struct {
 // データを一時保管する変数
 var (
 	notice   Notice
-	ClientId int
+	clientId int
 )
 
 // クライアントから通知を受け取る関数
@@ -33,7 +33,7 @@ func RecvNotice(c echo.Context) error {
 	}
 
 	// クライアントから取得した値の代入
-	ClientId = reqId
+	clientId = reqId
 
 	// 完了をクライアントに送信
 	return c.JSON(http.StatusOK, Result{Status: true})
@@ -51,9 +51,9 @@ func SendNotice(c echo.Context) error {
 	}
 
 	// 送信する値の代入
-	if reqId == ClientId {
+	if reqId == clientId {
 		notice.Flg = true
-		ClientId = 0
+		clientId = 0
 	} else {
 		notice.Flg = false
 	}

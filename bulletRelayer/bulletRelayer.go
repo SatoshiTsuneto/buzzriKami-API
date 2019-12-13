@@ -21,9 +21,6 @@ var (
 
 // 銃弾の数を受け取る関数
 func RecvBullet(c echo.Context) error {
-	// JSのためのヘッダー設定
-	c.Response().Header().Set(echo.HeaderAccessControlAllowOrigin, "*")
-
 	// クエリーの取得および、数値への変換
 	reqClientId, err := strconv.Atoi(c.QueryParam("id"))
 	if err != nil {
@@ -44,9 +41,6 @@ func RecvBullet(c echo.Context) error {
 
 // クライアントに銃弾の数を返す関数
 func SendBullet(c echo.Context) error {
-	// JSのためのヘッダー設定
-	c.Response().Header().Set(echo.HeaderAccessControlAllowOrigin, "*")
-
 	// クエリーの取得および、数値への変換
 	reqId, err := strconv.Atoi(c.QueryParam("id"))
 	if err != nil {
