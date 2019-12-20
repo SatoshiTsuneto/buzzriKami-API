@@ -31,7 +31,7 @@ func RecvTalk(c echo.Context) error {
 	}
 	reqTalkNum, err := strconv.Atoi(c.QueryParam("num"))
 	if err != nil {
-		return c.JSON(http.StatusBadRequest, "Missing Query Param for Buzz.")
+		return c.JSON(http.StatusBadRequest, "Missing Query Param for Num.")
 	}
 
 	// クライアントから取得した値の代入
