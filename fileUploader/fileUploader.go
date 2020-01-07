@@ -27,7 +27,7 @@ func FileSave(c echo.Context) error {
 	defer data.Close()
 
 	// ファイルの作成
-	dst, err := os.Create("./fileUploader/file/" + file.Filename)
+	dst, err := os.Create("./BuzzriKamiWeb/html/img/" + file.Filename)
 	if err != nil {
 		return c.JSON(http.StatusBadRequest, "Missing File Create.")
 	}

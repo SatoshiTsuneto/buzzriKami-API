@@ -7,6 +7,7 @@ import (
 	"buzzriKamiAPI/hitRelayer"
 	"buzzriKamiAPI/mascotRelayer"
 	"buzzriKamiAPI/noticeRelayer"
+	"buzzriKamiAPI/omikujiRelayer"
 	"github.com/labstack/echo"
 )
 
@@ -29,6 +30,9 @@ func main() {
 
 	e.GET("/recvTalk", mascotRelayer.SendTalk)
 	e.GET("/sendTalk", mascotRelayer.RecvTalk)
+
+	e.GET("/recvOmikuji", omikujiRelayer.SendOmikuji)
+	e.GET("/sendOmikuji", omikujiRelayer.RecvOmikuji)
 
 	e.Logger.Fatal(e.Start(":9999"))
 }
