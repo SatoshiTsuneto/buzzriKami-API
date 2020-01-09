@@ -31,6 +31,9 @@ func main() {
 	e.GET("/recvTalk", mascotRelayer.SendTalk)
 	e.GET("/sendTalk", mascotRelayer.RecvTalk)
 
+	e.GET("/recvAction", mascotRelayer.SendAction)
+	e.GET("/sendAction", mascotRelayer.RecvAction)
+
 	e.GET("/recvOmikuji", omikujiRelayer.SendOmikuji)
 	e.GET("/sendOmikuji", omikujiRelayer.RecvOmikuji)
 
